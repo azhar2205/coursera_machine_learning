@@ -24,7 +24,7 @@ theta_1_n = [ [ 0 ]; theta([2 : length(theta)]) ];
 
 J = (1 / m) * sum((-y .* log(h_x)) - ((1 - y) .* log(1 - h_x))) + (lambda / (2 * m)) * sum(theta_1_n .^ 2);
 
-grad = (1 / m) * sum((h_x - y) .* X) + (lambda / m) * theta_1_n';
+grad = (1 / m) * (X' * (h_x - y)) + (lambda / m) * theta_1_n;
 
 % =============================================================
 
